@@ -19,31 +19,33 @@ import javafx.scene.layout.Pane;
  */
 public class PlayerShip {
 
-    public PlayerShip(Pane root,Scene scene) {
-                //Image image = new Image(new FileInputStream("C:\\Users\\DELL\\Downloads\\spaceship1.png"));
-        Image image = ConfigAll.image_PlayerShip;
-        //Setting the image view 
-        ImageView imageView = new ImageView(image);
+    Image image = ConfigAll.image_PlayerShip;
+    ImageView imageView = new ImageView(image);
+
+    public PlayerShip(Pane root, Scene scene) {
+        //Image image = new Image(new FileInputStream("C:\\Users\\DELL\\Downloads\\spaceship1.png"));
 
         //Setting the position of the image 
         imageView.setX(0);
-        imageView.setY(5);
-        imageView.setFitHeight(150);
+        imageView.setY(350);
+        imageView.setFitHeight(80);
         imageView.setFitWidth(150);
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if (event.getCode() == KeyCode.DOWN && imageView.getY() < 550) {
-                    imageView.setY(imageView.getY() + 10);
-                }
-                if (event.getCode() == KeyCode.UP && imageView.getY() > -40) {
-                    imageView.setY(imageView.getY() - 10);
+                if (ConfigAll.playerShipMoveFlag == true) {
+
+                    if (event.getCode() == KeyCode.DOWN && imageView.getY() < 550) {
+                        imageView.setY(imageView.getY() + 10);
+                    }
+                    if (event.getCode() == KeyCode.UP && imageView.getY() > -40) {
+                        imageView.setY(imageView.getY() - 10);
+                    }
                 }
             }
 
         });
         root.getChildren().add(imageView);
-       
 
     }
 

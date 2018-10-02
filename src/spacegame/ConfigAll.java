@@ -15,6 +15,8 @@ class ConfigAll {
 
     public static int SCREEN_WIDTH = 1200;
     public static int SCREEN_HEIGHT = 650;
-    public static Image image_PlayerShip = new Image(SpaceGame.class.getResourceAsStream("/images/spaceship1.png"));
-    
+    public static Image image_PlayerShip = new Image(SpaceGame.class.getResourceAsStream("/images/spaceship2.png"));
+    public static Image image_opponent_Ship = new Image(SpaceGame.class.getResourceAsStream("/images/opponentShip.png"));        
+    public static Image bImage=new Image(SpaceGame.class.getResourceAsStream("/images/background.png"));
+    public static boolean playerShipMoveFlag=true;
 }

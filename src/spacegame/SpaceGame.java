@@ -8,10 +8,14 @@ package spacegame;
 import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-
 
 /**
  *
@@ -24,8 +28,7 @@ public class SpaceGame extends Application {
 
         Pane root = new Pane();
         Scene scene = new Scene(root, ConfigAll.SCREEN_WIDTH, ConfigAll.SCREEN_HEIGHT);
-        
-        PlayerShip playerShip=new PlayerShip(root, scene);
+        GamePlayStart gamePlayStart=new GamePlayStart(scene, root);
         
         primaryStage.setScene(scene);
         primaryStage.show();
