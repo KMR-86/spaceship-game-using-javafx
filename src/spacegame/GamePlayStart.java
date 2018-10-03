@@ -26,7 +26,7 @@ public class GamePlayStart {
 
     public GamePlayStart(Scene scene, Pane root) {
 
-        BackGround backGround = new BackGround(root);
+        BackGround backGround = new BackGround(scene,root);
         OpponentShip[] opponentShip = new OpponentShip[8];
         
         for (int i = 0; i < 8; i++) {
@@ -56,6 +56,7 @@ public class GamePlayStart {
                             opponentShip[j].OpponentMoveloop.stop();
                         }
                         ConfigAll.playerShipMoveFlag=false;
+                        BackGround.BackGroundLoop.stop();
                     }
                 }
             }
