@@ -63,8 +63,8 @@ public class BackGround {
                     imageView2.setX(1200);
 
                 }
-                System.out.println("x1 : " + imageView.getX());
-                System.out.println("x2 : " + imageView2.getX());
+                //System.out.println("x1 : " + imageView.getX());
+                //System.out.println("x2 : " + imageView2.getX());
             }
         }));
         BackGroundLoop.setCycleCount(Timeline.INDEFINITE);

@@ -19,6 +19,10 @@ class ConfigAll {
     public static Image image_opponent_Ship = new Image(SpaceGame.class.getResourceAsStream("/images/opponentShip.png"));        
     public static Image bImage=new Image(SpaceGame.class.getResourceAsStream("/images/background.png"));
     public static Image bImage2=new Image(SpaceGame.class.getResourceAsStream("/images/background.png"));
+    public static Image image_bullet=new Image(SpaceGame.class.getResourceAsStream("/images/missile.png"));
 
     public static boolean playerShipMoveFlag=true;
+    public static double PlayerShipX=0;
+    public static double PlayerShipY=350;
+    
 }

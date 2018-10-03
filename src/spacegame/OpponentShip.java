@@ -45,7 +45,7 @@ public class OpponentShip {
                 if(imageView.getX()>-510){
                 imageView.setX(imageView.getX() - 1);
                 }
-                else{
+               else{
                 imageView.setX(1200);
                 imageView.setY(randomPositionFactor());
                 }

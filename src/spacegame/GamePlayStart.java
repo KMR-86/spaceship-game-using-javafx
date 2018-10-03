@@ -5,6 +5,9 @@
  */
 package spacegame;
 
+import static java.lang.Thread.sleep;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -24,11 +27,20 @@ public class GamePlayStart {
 
     Timeline isDeadLoop;
 
-    public GamePlayStart(Scene scene, Pane root) {
+    public GamePlayStart(Scene scene, Pane root) throws InterruptedException {
 
-        BackGround backGround = new BackGround(scene,root);
+        BackGround backGround = new BackGround(scene, root);
         OpponentShip[] opponentShip = new OpponentShip[8];
-        
+        Bullet[] bullet = new Bullet[12];
+        for (int i = 0; i < 12; i++) {
+            bullet[i] = new Bullet(scene, root,i*100,ConfigAll.PlayerShipY);
+
+        }
+        int c=0;
+        for(int i=0;i<12;i++){
+            bullet[i].shoot();
+            
+        }
         for (int i = 0; i < 8; i++) {
             opponentShip[i] = new OpponentShip(scene, root, -100 - (500 * (i % 2)), i * 100);
         }
@@ -46,17 +58,18 @@ public class GamePlayStart {
 
             @Override
             public void handle(final ActionEvent t) {
-                //System.out.println("X" + playerShip.imageView.getX() + " , " + opponentShip.imageView.getX());
-                //System.out.println("Y" + playerShip.imageView.getY() + " , " + opponentShip.imageView.getY());
                 for (int i = 0; i < 8; i++) {
                     if (isDead(playerShip, opponentShip[i])) {
-                        System.out.println("game over");
+
                         textGameOver.setText("Game Over");
-                        for(int j=0;j<8;j++){
+                        for (int j = 0; j < 8; j++) {
                             opponentShip[j].OpponentMoveloop.stop();
                         }
-                        ConfigAll.playerShipMoveFlag=false;
+                        ConfigAll.playerShipMoveFlag = false;
                         BackGround.BackGroundLoop.stop();
+                        for (int j = 0; j < 12; j++) {
+                            bullet[j].BulletLoop.stop();
+                        }
                     }
                 }
             }
@@ -72,8 +85,9 @@ public class GamePlayStart {
         return false;
 
     }
-    static void finishGame(){
-        
+
+    static void finishGame() {
+
     }
 
 }

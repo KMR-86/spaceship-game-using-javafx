@@ -37,10 +37,13 @@ public class PlayerShip {
 
                     if (event.getCode() == KeyCode.DOWN && imageView.getY() < 550) {
                         imageView.setY(imageView.getY() + 10);
+                       
                     }
                     if (event.getCode() == KeyCode.UP && imageView.getY() > -40) {
                         imageView.setY(imageView.getY() - 10);
                     }
+                    ConfigAll.PlayerShipX= imageView.getX();
+                    ConfigAll.PlayerShipY= imageView.getY();
                 }
             }
 

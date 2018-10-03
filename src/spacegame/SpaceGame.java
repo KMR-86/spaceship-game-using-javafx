@@ -24,7 +24,7 @@ import javafx.stage.Stage;
 public class SpaceGame extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
+    public void start(Stage primaryStage) throws FileNotFoundException, InterruptedException {
 
         Pane root = new Pane();
         Scene scene = new Scene(root, ConfigAll.SCREEN_WIDTH, ConfigAll.SCREEN_HEIGHT);
